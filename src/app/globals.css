@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   THEME: Dark Mode (Primary)
+   ============================================ */
+:root[data-theme="dark"] {
+  /* Background layers — darkest to lightest */
+  --bg-void: #07080F;
+  --bg-base: #0C0E1A;
+  --bg-elevated: #131627;
+  --bg-hover: #1A1E35;
+  --bg-active: #222845;
+
+  /* Neon accents */
+  --accent-cyan: #00F0FF;
+  --accent-cyan-muted: #00F0FF26;
+  --accent-cyan-glow: 0 0 20px #00F0FF40, 0 0 60px #00F0FF15;
+
+  --accent-magenta: #FF2D78;
+  --accent-magenta-muted: #FF2D7826;
+  --accent-magenta-glow: 0 0 20px #FF2D7840, 0 0 60px #FF2D7815;
+
+  --accent-green: #00FF88;
+  --accent-green-muted: #00FF8826;
+
+  --accent-amber: #FFB800;
+  --accent-amber-muted: #FFB80026;
+
+  --accent-purple: #A855F7;
+  --accent-purple-muted: #A855F726;
+
+  /* Text */
+  --text-primary: #E8ECF4;
+  --text-secondary: #8891A5;
+  --text-tertiary: #4A5268;
+  --text-on-accent: #07080F;
+
+  /* Borders */
+  --border-subtle: #1E2340;
+  --border-default: #2A3055;
+  --border-accent: #00F0FF30;
+
+  /* Glass / overlay */
+  --glass-bg: rgba(12, 14, 26, 0.80);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-blur: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-cyan: 0 0 30px #00F0FF20;
+  --shadow-glow-magenta: 0 0 30px #FF2D7820;
+
+  /* Provider colors */
+  --provider-anthropic: #D4A574;
+  --provider-openai: #10A37F;
+  --provider-google: #4285F4;
+}
+
+/* ============================================
+   THEME: Light Mode (Alternative)
+   ============================================ */
+:root[data-theme="light"] {
+  /* Background layers */
+  --bg-void: #F0F2F8;
+  --bg-base: #F7F8FC;
+  --bg-elevated: #FFFFFF;
+  --bg-hover: #ECEEF5;
+  --bg-active: #E0E3F0;
+
+  /* Neon accents — deeper for contrast on light */
+  --accent-cyan: #0099AA;
+  --accent-cyan-muted: #0099AA12;
+  --accent-cyan-glow: 0 0 20px #0099AA20;
+
+  --accent-magenta: #D6245E;
+  --accent-magenta-muted: #D6245E12;
+  --accent-magenta-glow: 0 0 20px #D6245E20;
+
+  --accent-green: #00A858;
+  --accent-green-muted: #00A85812;
+
+  --accent-amber: #C48800;
+  --accent-amber-muted: #C4880012;
+
+  --accent-purple: #8B3FD4;
+  --accent-purple-muted: #8B3FD412;
+
+  /* Text */
+  --text-primary: #131627;
+  --text-secondary: #5A6178;
+  --text-tertiary: #9CA3B8;
+  --text-on-accent: #FFFFFF;
+
+  /* Borders */
+  --border-subtle: #E5E7EE;
+  --border-default: #D0D3DE;
+  --border-accent: #0099AA30;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-blur: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow-cyan: 0 0 30px #0099AA10;
+  --shadow-glow-magenta: 0 0 30px #D6245E10;
+
+  /* Provider colors */
+  --provider-anthropic: #D4A574;
+  --provider-openai: #10A37F;
+  --provider-google: #4285F4;
+}
+
+/* ============================================
+   DEFAULT: Dark mode before JS hydration
+   ============================================ */
+:root:not([data-theme]) {
+  --bg-void: #07080F;
+  --bg-base: #0C0E1A;
+  --bg-elevated: #131627;
+  --bg-hover: #1A1E35;
+  --bg-active: #222845;
+  --accent-cyan: #00F0FF;
+  --accent-cyan-muted: #00F0FF26;
+  --accent-cyan-glow: 0 0 20px #00F0FF40, 0 0 60px #00F0FF15;
+  --accent-magenta: #FF2D78;
+  --accent-magenta-muted: #FF2D7826;
+  --accent-magenta-glow: 0 0 20px #FF2D7840, 0 0 60px #FF2D7815;
+  --accent-green: #00FF88;
+  --accent-green-muted: #00FF8826;
+  --accent-amber: #FFB800;
+  --accent-amber-muted: #FFB80026;
+  --accent-purple: #A855F7;
+  --accent-purple-muted: #A855F726;
+  --text-primary: #E8ECF4;
+  --text-secondary: #8891A5;
+  --text-tertiary: #4A5268;
+  --text-on-accent: #07080F;
+  --border-subtle: #1E2340;
+  --border-default: #2A3055;
+  --border-accent: #00F0FF30;
+  --glass-bg: rgba(12, 14, 26, 0.80);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-blur: 16px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-cyan: 0 0 30px #00F0FF20;
+  --shadow-glow-magenta: 0 0 30px #FF2D7820;
+  --provider-anthropic: #D4A574;
+  --provider-openai: #10A37F;
+  --provider-google: #4285F4;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, #00F0FF06 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, #FF2D7806 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  /* Scrollbar styling — dark mode */
+  [data-theme="dark"] ::-webkit-scrollbar {
+    width: 8px;
+  }
+  [data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-base);
+  }
+  [data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border-default);
+    border-radius: 4px;
+  }
+  [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background-color: var(--accent-cyan-muted);
+    color: var(--text-primary);
+  }
+}
+
+/* ============================================
+   SMOOTH THEME TRANSITION
+   ============================================ */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

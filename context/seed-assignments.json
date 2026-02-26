@@ -1,0 +1,17 @@
+{
+  "agent_skills": [
+    { "agent_slug": "prd-drafter", "skill_slug": "market-sizing", "mode": "on_demand", "sort_order": 0 },
+    { "agent_slug": "prd-drafter", "skill_slug": "bom-estimation", "mode": "on_demand", "sort_order": 1 },
+    { "agent_slug": "prd-drafter", "skill_slug": "user-story-writing", "mode": "on_demand", "sort_order": 2 },
+    { "agent_slug": "prd-drafter", "skill_slug": "risk-assessment", "mode": "on_demand", "sort_order": 3 },
+    { "agent_slug": "competitive-intel", "skill_slug": "market-sizing", "mode": "always_on", "sort_order": 0 },
+    { "agent_slug": "tech-spec-writer", "skill_slug": "bom-estimation", "mode": "on_demand", "sort_order": 0 },
+    { "agent_slug": "qa-reviewer", "skill_slug": "risk-assessment", "mode": "always_on", "sort_order": 0 }
+  ],
+  "agent_templates": [
+    { "agent_slug": "prd-drafter", "template_slug": "ms1-prd", "sort_order": 0 },
+    { "agent_slug": "prd-drafter", "template_slug": "gate-review-checklist", "sort_order": 1 },
+    { "agent_slug": "competitive-intel", "template_slug": "competitive-analysis-matrix", "sort_order": 0 },
+    { "agent_slug": "qa-reviewer", "template_slug": "gate-review-checklist", "sort_order": 0 }
+  ]
+}

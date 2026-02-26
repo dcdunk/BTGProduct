@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Market Sizing",
+    "slug": "market-sizing",
+    "description": "Estimates TAM/SAM/SOM with structured top-down and bottom-up methodology.",
+    "icon_emoji": "📊",
+    "category": "research",
+    "content": "## Market Sizing Skill\n\nWhen asked to size a market, follow this methodology:\n\n### 1. Define the Market\n- What product category? What geography? What time frame?\n- Clarify if estimating TAM (Total Addressable Market), SAM (Serviceable Addressable Market), or SOM (Serviceable Obtainable Market)\n\n### 2. Top-Down Estimate\n- Start with the broadest relevant market size (cite source)\n- Apply successive filters to narrow: geography, segment, price point, adoption rate\n- Show your math at each step\n\n### 3. Bottom-Up Estimate\n- Identify the number of potential customers in the target segment\n- Multiply by expected purchase frequency and price point\n- Account for competitive dynamics and market share assumptions\n\n### 4. Triangulate\n- Compare top-down and bottom-up estimates\n- Explain any significant discrepancy\n- Provide a range (conservative / base / optimistic) with stated assumptions\n\n### 5. Output Format\n- TAM: $X (how calculated)\n- SAM: $X (filters applied)\n- SOM: $X (realistic capture rate with reasoning)\n- Growth rate: X% CAGR with source\n- Key assumptions listed explicitly"
+  },
+  {
+    "name": "BOM Estimation",
+    "slug": "bom-estimation",
+    "description": "Breaks down component costs for hardware products with supplier and risk analysis.",
+    "icon_emoji": "🧮",
+    "category": "technical",
+    "content": "## BOM Estimation Skill\n\nWhen asked to estimate a Bill of Materials, follow this structure:\n\n### 1. Component Breakdown\nList every physical component in the product. For each:\n- Component name and function\n- Specification (key parameters)\n- Estimated unit cost at target volume (state the volume assumption)\n- Lead time (weeks)\n- Single source or multi-source availability\n- Supplier(s) if known\n\n### 2. Standard Component Categories for Golf Tech\n- Radar/sensor module: $8-25 depending on chipset\n- BLE module (e.g., Nordic nRF52/nRF53 series): $2-5\n- MCU/SoC: $3-12 depending on processing needs\n- Display (if applicable): OLED $3-8, LCD $1-3\n- Battery (Li-ion/LiPo): $2-6 based on capacity\n- PCB + assembly: $3-8 depending on layer count and component density\n- Enclosure (injection molded): $1-4 per unit (amortized tooling separate)\n- Connectors, buttons, misc hardware: $1-3\n- Packaging: $1-3\n\n### 3. Cost Roll-Up Table\n| Component | Spec | Unit Cost | Lead Time | Source Risk |\n|-----------|------|-----------|-----------|-------------|\n| ... | ... | $X.XX | X weeks | Low/Med/High |\n| **Total BOM** | | **$X.XX** | | |\n\n### 4. Non-BOM Costs (flag separately)\n- NRE (non-recurring engineering): firmware development, mechanical design, PCB layout\n- Tooling: injection mold tooling ($15K-50K per mold)\n- Certification: FCC ($10-20K), CE ($5-15K), IC ($5-10K)\n- Assembly/test fixtures: $5-15K\n\n### 5. Assumptions & Risks\n- State volume assumption (costs vary significantly: 1K vs 10K vs 100K units)\n- Flag components with volatile pricing or supply constraints\n- Note any components approaching EOL (end of life)"
+  },
+  {
+    "name": "User Story Writing",
+    "slug": "user-story-writing",
+    "description": "Generates user stories in proper format with acceptance criteria and prioritization.",
+    "icon_emoji": "👤",
+    "category": "writing",
+    "content": "## User Story Writing Skill\n\nWhen asked to write user stories, follow this approach:\n\n### Format\nAs a [specific user type], I want to [concrete action] so that [measurable outcome].\n\n### Acceptance Criteria\nEvery user story must include acceptance criteria written as:\n- Given [context], when [action], then [expected result]\n- Minimum 2 acceptance criteria per story, covering the happy path and at least one edge case\n\n### Prioritization\nTag each story with priority:\n- P0: Must have for launch. Product is broken without it.\n- P1: Should have for launch. Product is significantly weaker without it.\n- P2: Nice to have. Can ship without it and add later.\n\n### Story Quality Checklist\n- Is the user type specific enough? (Not just 'user' — who exactly?)\n- Is the action concrete and testable?\n- Is the outcome a real benefit, not a restatement of the action?\n- Are acceptance criteria verifiable by QA?\n- Is the story small enough to build in one sprint? If not, break it down.\n\n### For Hardware-Software Products\n- Distinguish between hardware stories (physical interaction), firmware stories (device behavior), and app stories (software experience)\n- Flag stories that span hardware and software — these are integration points and carry higher risk\n- Include stories for: setup/pairing, normal use, error recovery, firmware update, battery/charging"
+  },
+  {
+    "name": "Risk Assessment",
+    "slug": "risk-assessment",
+    "description": "Produces structured risk matrices with likelihood, impact, and mitigation strategies.",
+    "icon_emoji": "⚠️",
+    "category": "review",
+    "content": "## Risk Assessment Skill\n\nWhen asked to assess risks, produce a structured risk matrix:\n\n### Risk Categories\nAlways consider these categories:\n1. **Technical** — Can we build it? Unproven technology, integration complexity, performance uncertainty\n2. **Supply Chain** — Can we source it? Component availability, single-source dependencies, lead times\n3. **Regulatory** — Can we sell it? FCC/CE/IC certification, compliance changes, safety standards\n4. **Schedule** — Can we ship on time? Dependencies, parallel workstreams, resource constraints\n5. **Market** — Will anyone buy it? Competitive response, pricing pressure, demand assumptions\n6. **Quality** — Will it work reliably? Durability, environmental tolerance, software stability\n\n### Risk Matrix Format\n| # | Risk | Category | Likelihood (1-5) | Impact (1-5) | Score | Mitigation | Owner |\n|---|------|----------|-------------------|--------------|-------|------------|-------|\n\nScore = Likelihood × Impact. Sort by score descending.\n\n### Likelihood Scale\n1 = Rare (< 10%), 2 = Unlikely (10-25%), 3 = Possible (25-50%), 4 = Likely (50-75%), 5 = Almost Certain (> 75%)\n\n### Impact Scale\n1 = Negligible (minor inconvenience), 2 = Minor (workaround exists), 3 = Moderate (delays or cost increase), 4 = Major (significant scope/timeline change), 5 = Critical (project viability threatened)\n\n### Response Strategies\nFor each high-score risk (≥ 12), specify one of:\n- **Mitigate**: Actions to reduce likelihood or impact\n- **Transfer**: Shift risk to a third party (insurance, contract terms, supplier guarantees)\n- **Accept**: Acknowledge and monitor (with trigger conditions for escalation)\n- **Avoid**: Change the plan to eliminate the risk entirely"
+  }
+]
