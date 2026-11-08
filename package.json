@@ -46,6 +46,9 @@
   "overrides": {
     "@vitejs/devtools-vitest": {
       "vitest": "4.1.12"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.5"
     }
   }
 }
