@@ -34,13 +34,18 @@
     "@types/node": "^22.13.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/coverage-v8": "^4.1.12",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.29",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.23",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.12"
+  },
+  "overrides": {
+    "@vitejs/devtools-vitest": {
+      "vitest": "4.1.12"
+    }
   }
 }
