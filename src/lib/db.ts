@@ -755,7 +755,6 @@ export function getApiKeyForProvider(provider: string): string | null {
 
   if (record) {
     try {
-      const { decrypt } = require('./crypto') as typeof import('./crypto');
       return decrypt(record.encrypted_key, record.iv, record.auth_tag);
     } catch {
       // Fall through to env var
@@ -1096,7 +1095,6 @@ export function getAllApiKeyStatuses(): { provider: string; key_hint: string; se
 }
 
 export function setApiKey(provider: string, plaintextKey: string, userId: string): void {
-  const { encrypt } = require('./crypto') as typeof import('./crypto');
   const { encrypted, iv, authTag } = encrypt(plaintextKey);
   const keyHint = '...' + plaintextKey.slice(-4);
   getDb().prepare(`
