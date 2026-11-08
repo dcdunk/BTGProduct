@@ -6,8 +6,9 @@ import { auth } from '@modelcontextprotocol/sdk/client/auth.js';
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  props: { params: Promise<{ id: string }> }
 ) {
+  const params = await props.params;
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });

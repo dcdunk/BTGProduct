@@ -4,10 +4,11 @@ import TemplateForm from '@/components/templates/TemplateForm';
 import type { Template } from '@/types';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default async function EditTemplatePage({ params }: PageProps) {
+export default async function EditTemplatePage(props: PageProps) {
+  const params = await props.params;
   const template = getTemplateBySlug(params.slug) as Template | undefined;
   if (!template) notFound();
 

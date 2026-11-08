@@ -4,10 +4,11 @@ import SkillForm from '@/components/skills/SkillForm';
 import type { Skill } from '@/types';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default async function EditSkillPage({ params }: PageProps) {
+export default async function EditSkillPage(props: PageProps) {
+  const params = await props.params;
   const skill = getSkillBySlug(params.slug) as Skill | undefined;
   if (!skill) notFound();
 

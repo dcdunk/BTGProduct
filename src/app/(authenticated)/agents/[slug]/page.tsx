@@ -7,10 +7,11 @@ import ChatInterface from '@/components/chat/ChatInterface';
 import type { Agent } from '@/types';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default async function AgentChatPage({ params }: PageProps) {
+export default async function AgentChatPage(props: PageProps) {
+  const params = await props.params;
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) return null; // AuthGuard handles redirect
 

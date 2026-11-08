@@ -4,10 +4,11 @@ import AgentForm from '@/components/agents/AgentForm';
 import type { Agent } from '@/types';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default async function EditAgentPage({ params }: PageProps) {
+export default async function EditAgentPage(props: PageProps) {
+  const params = await props.params;
   const agent = getAgentBySlug(params.slug) as Agent | undefined;
   if (!agent) notFound();
 

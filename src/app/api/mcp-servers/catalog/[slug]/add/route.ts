@@ -6,8 +6,9 @@ import { MCP_OAUTH_CATALOG } from '@/lib/mcp/oauth-catalog';
 
 export async function POST(
   request: Request,
-  { params }: { params: { slug: string } }
+  props: { params: Promise<{ slug: string }> }
 ) {
+  const params = await props.params;
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });

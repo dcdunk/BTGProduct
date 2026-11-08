@@ -5,8 +5,9 @@ import { deleteApiKey } from '@/lib/db';
 
 export async function DELETE(
   _request: Request,
-  { params }: { params: { provider: string } }
+  props: { params: Promise<{ provider: string }> }
 ) {
+  const params = await props.params;
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
